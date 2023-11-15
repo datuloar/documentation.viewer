@@ -35,7 +35,7 @@ class ExampleAbility {
 ```
 ## Окно с документацией
 <p align="center">
-    <img src="GitResources~/ToolsDocumentationViewer.jpg" width="645" height="157" alt="ABC">
+    <img src="GitResources~/ToolsDocumentationViewer.jpg" width="600" height="1000" alt="Documentation window tutorial">
 </p>
 
 # TODO:
