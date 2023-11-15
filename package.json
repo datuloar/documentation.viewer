@@ -1,0 +1,22 @@
+{
+  "name": "com.documentation.viewer.unity",
+  "version": "0.0.1",
+  "displayName": "Documentation Viewer",
+  "description": "Write documentation in the attributes in the game",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://github.com/datuloar/documentation.viewer",
+  "licensesUrl": "https://github.com/datuloar/documentation.viewer/blob/main/LICENSE",
+  "dependencies": {},
+  "author": {
+    "name": "datuloar",
+    "email": "datuloar@mail.ru"
+  },
+  "samples": [
+    {
+      "displayName": "Documentation Example",
+      "description": "Example use attributes",
+      "path": "Example~"
+    }
+  ]
+}
