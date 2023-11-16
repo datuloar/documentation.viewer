@@ -93,8 +93,12 @@ namespace datuloar.documentation.Editor
 
                         GUI.backgroundColor = previousColor;
 
+                        var textAreaStyle = new GUIStyle(EditorStyles.textArea);
+                        textAreaStyle.wordWrap = true;
+                        textAreaStyle.fontStyle = FontStyle.Bold;
+
                         EditorGUI.TextArea(EditorGUILayout.GetControlRect(GUILayout.Height(_config.DocumentationTextHeight)),
-                            documentationAttribute.Text);
+                            documentationAttribute.Text, textAreaStyle);
 
                         EditorGUILayout.Space();
                     }
