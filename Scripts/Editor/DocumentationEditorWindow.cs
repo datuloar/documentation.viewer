@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using datuloar.documentation.Config;
+using PlasticPipe.Server;
 
 namespace datuloar.documentation.Editor
 {
@@ -82,9 +83,18 @@ namespace datuloar.documentation.Editor
                     if (attributes.Length > 0)
                     {
                         var documentationAttribute = attributes[0] as DocumentationAttribute;
-                        EditorGUILayout.LabelField($"Class: {markedClass.Name}");
+
+                        Color previousColor = GUI.backgroundColor;
+
+                        GUI.backgroundColor = _config.ClassButtonColor;
+
+                        if (GUILayout.Button(markedClass.Name))
+                            ShowClassInProject(markedClass);
+
+                        GUI.backgroundColor = previousColor;
+
                         EditorGUI.TextArea(EditorGUILayout.GetControlRect(GUILayout.Height(_config.DocumentationTextHeight)),
-                            documentationAttribute.Text, EditorStyles.textArea);
+                            documentationAttribute.Text);
 
                         EditorGUILayout.Space();
                     }
@@ -92,6 +102,24 @@ namespace datuloar.documentation.Editor
             }
 
             EditorGUILayout.EndScrollView();
+        }
+
+        private void ShowClassInProject(Type classType)
+        {
+            string className = classType.Name;
+            string[] allScriptGuids = AssetDatabase.FindAssets(className);
+
+            if (allScriptGuids.Length > 0)
+            {
+                string classPath = AssetDatabase.GUIDToAssetPath(allScriptGuids[0]);
+                UnityEngine.Object classAsset = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(classPath);
+
+                if (classAsset != null)
+                {
+                    EditorGUIUtility.PingObject(classAsset);
+                    Selection.activeObject = classAsset;
+                }
+            }
         }
 
         private void DrawSearchButton()

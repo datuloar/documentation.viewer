@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DocumentationEditorWindowConfig
   m_EditorClassIdentifier: 
   <ActiveCatalogButtonColor>k__BackingField: {r: 0.19, g: 0.96, b: 0.9, a: 1}
+  <ClassButtonColor>k__BackingField: {r: 0.6933962, g: 1, b: 0.8395938, a: 1}
   <WindowMinSize>k__BackingField: {x: 800, y: 600}
   <WindowMaxSize>k__BackingField: {x: 800, y: 600}
   <DocumentationTextHeight>k__BackingField: 50
