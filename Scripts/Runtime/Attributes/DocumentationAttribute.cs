@@ -1,6 +1,9 @@
 ﻿namespace datuloar.documentation
 {
-    [System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Struct)]
+    [System.AttributeUsage(System.AttributeTargets.Class 
+        | System.AttributeTargets.Enum 
+        | System.AttributeTargets.Struct 
+        | System.AttributeTargets.Interface)]
     public class DocumentationAttribute : System.Attribute
     {
         public DocumentationCatalogType DocType { get; }
