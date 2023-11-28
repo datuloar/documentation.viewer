@@ -4,10 +4,10 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using datuloar.documentation.Config;
-using PlasticPipe.Server;
 
 namespace datuloar.documentation.Editor
 {
+#if UNITY_EDITOR
     public class DocumentationEditorWindow : EditorWindow
     {
         private const string Documentation = nameof(Documentation);
@@ -167,4 +167,5 @@ namespace datuloar.documentation.Editor
                 _filteredClasses = new List<Type>();
         }
     }
+#endif
 }
